@@ -4,12 +4,21 @@ AnderSon
 
 * Blog
 
+** Files
+
   [[./app/controllers]]
+  [[./Gemfile]]
+  [[./config/environments]]
+  [[./config/initializers]]
+  [[./app/models]]
+  [[./app/views]]
 
 ** Log
    
    - [ ] title:string
    - [ ] entry:text
+   - [ ] tags:array(of strings)
+   - [ ] image upload
 
 
 
