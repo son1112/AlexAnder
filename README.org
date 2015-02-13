@@ -7,8 +7,10 @@ AnderSon
 ** Files
 
   [[./app/controllers]]
+  [[./app/models]]
   [[./Gemfile]]
   [[./.env]]
+  [[./db/migrate]]
   [[./config/environments]]
   [[./config/initializers]]
   [[./app/models]]

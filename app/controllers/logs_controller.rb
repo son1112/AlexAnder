@@ -41,8 +41,6 @@ class LogsController < ApplicationController
     end
   end
 
-  # DELETE /logs/1
-  # DELETE /logs/1.json
   def destroy
     @log.destroy
     respond_to do |format|
@@ -59,6 +57,6 @@ class LogsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def log_params
-      params.require(:log).permit(:title, :entry)
+      params.require(:log).permit(:title, :entry, :video)
     end
 end
