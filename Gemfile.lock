@@ -40,6 +40,9 @@ GEM
     autoprefixer-rails (5.1.5)
       execjs
       json
+    aws-sdk (1.46.0)
+      json (~> 1.4)
+      nokogiri (>= 1.4.4)
     bcrypt (3.1.10)
     bootstrap-sass (3.3.3)
       autoprefixer-rails (>= 5.0.0.1)
@@ -206,6 +209,7 @@ PLATFORMS
 
 DEPENDENCIES
   autoprefixer-rails
+  aws-sdk
   bcrypt
   bootstrap-sass
   coffee-rails (= 4.0.1)

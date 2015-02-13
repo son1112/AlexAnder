@@ -17,6 +17,8 @@ AnderSon
   [[./app/views]]
 
 ** Log
+
+   [[./app/views/logs]]
    
    - [ ] title:string
    - [ ] entry:text
