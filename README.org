@@ -1,3 +1,13 @@
-AlexAnder application
+AlexAnder weBJOURNal application
+re=>render 2015
+AnderSon
 
-*Documentation forthcoming*
+* Blog
+
+** Log
+   
+   - [ ] title:string
+   - [ ] entry:text
+
+
+

@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
-  root 'static_pages#home'
+  resources :logs
+
+  root 'logs#index'
   
   get 'static_pages/home'
 
