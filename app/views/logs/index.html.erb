@@ -1,29 +1,36 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Constipation Logs</h1>
+<div class='row'>
+  <div class='col-md-6'>
+    <h1>Constipation Logs</h1>
+    <%= link_to 'New Log', new_log_path, class: 'btn btn-default' %>
+  </div>
+</div>
+<hr/>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Entry</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @logs.reverse.each do |log| %>
+<div class='col-md-10'>
+  <table class='table'>
+    <thead>
       <tr>
-        <td><%= log.title %></td>
-        <td><%= log.entry %></td>
-        <td><%= link_to 'Show', log %></td>
-        <td><%= link_to 'Edit', edit_log_path(log) %></td>
-        <td><%= link_to 'Destroy', log, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+	<th>Title</th>
+	<th>Entry</th>
+	<th colspan="3"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
+    <tbody>
+      <% @logs.reverse.each do |log| %>
+	<tr>
+          <td><%= log.title %></td>
+          <td><%= log.entry %></td>
+          <td><%= link_to 'Show', log %></td>
+          <td><%= link_to 'Edit', edit_log_path(log) %></td>
+          <td><%= link_to 'Destroy', log, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+	</tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
 <br>
 
-<%= link_to 'New Log', new_log_path %>
+
