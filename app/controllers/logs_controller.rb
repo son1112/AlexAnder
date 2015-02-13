@@ -20,7 +20,6 @@ class LogsController < ApplicationController
 
     respond_to do |format|
       if @log.save
-        #format.html { redirect_to @log, notice: 'Log was successfully created.' }
         format.html { redirect_to action: "index", notice: 'Log was successfully created.' }
         format.json { render :show, status: :created, location: @log }
       else

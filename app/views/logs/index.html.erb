@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Logs</h1>
+<h1>Constipation Logs</h1>
 
 <table>
   <thead>
@@ -12,7 +12,7 @@
   </thead>
 
   <tbody>
-    <% @logs.each do |log| %>
+    <% @logs.reverse.each do |log| %>
       <tr>
         <td><%= log.title %></td>
         <td><%= log.entry %></td>
