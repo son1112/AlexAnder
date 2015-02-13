@@ -11,6 +11,7 @@ AnderSon
   [[./Gemfile]]
   [[./.env]]
   [[./db/migrate]]
+  [[./config]]
   [[./config/environments]]
   [[./config/initializers]]
   [[./app/models]]
