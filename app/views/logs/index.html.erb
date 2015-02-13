@@ -2,17 +2,7 @@
 
 <div class='row'>
   <div class='col-md-6'>
-    <h1>Constipation Logs</h1>
-
-    <% if dev_signed_in? %>
-      <%= link_to 'New Log', new_log_path, class: 'btn btn-default' %>
-      <%= link_to destroy_dev_session_path, class: 'btn btn-default', method: :delete do %>
-	Sign Out
-      <% end %>
-    <% else %>
-      <%= link_to 'Sign In', new_dev_session_path, class: 'btn btn-default' %>
-    <% end %>
-
+    <%= render 'layouts/header' %>
   </div>
 </div>
 <hr/>
@@ -33,7 +23,7 @@
 	<tr>
           <td><%= log.title %></td>
           <td><%= log.entry %></td>
-	  <td><%= image_tag log.image.url %></td>
+	  <td><%= image_tag log.image.url, class: 'img-med' %></td>
           <td><%= link_to 'Show', log %></td>
 	  <% if dev_signed_in? %>
             <td><%= link_to 'Edit', edit_log_path(log) %></td>
