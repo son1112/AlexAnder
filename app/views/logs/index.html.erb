@@ -22,7 +22,7 @@
       <% @logs.reverse.each do |log| %>
 	<tr>
           <td><%= log.title %></td>
-          <td><%= log.entry %></td>
+          <td><%= markdown(log.entry).html_safe %></td>
 	  <td><%= image_tag log.image.url, class: 'img-med' %></td>
           <td><%= link_to 'Show', log %></td>
 	  <% if dev_signed_in? %>
