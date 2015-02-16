@@ -6,14 +6,12 @@
 </p>
 
 <p>
-  <strong>Entry:</strong>
-  <%= markdown(@log.entry).html_safe %>
+  <%= markdown(@log.entry).html_safe, class: 'entry' %>
 </p>
 
 <p>
-  <strong>Image:</strong>
   <%= image_tag @log.image.url, class: 'img-sm right' %>
 </p>
 
-<%= link_to 'Edit', edit_log_path(@log) %> |
-<%= link_to 'Back', logs_path %>
+<%= link_to 'Edit', edit_log_path(@log), class: 'btn btn-primary' %> |
+<%= link_to 'Back', logs_path, class: 'btn btn-primary' %>
