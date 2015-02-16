@@ -8,14 +8,17 @@ AnderSon
 
   [[./app/controllers]]
   [[./app/models]]
+  [[./app/helpers]]
+  [[./app/views]]
   [[./Gemfile]]
+  [[./.gitignore]]
   [[./.env]]
+  [[./db/schema.rb]]
   [[./db/migrate]]
   [[./config]]
   [[./config/environments]]
   [[./config/initializers]]
-  [[./app/models]]
-  [[./app/views]]
+
 
 ** Log
 

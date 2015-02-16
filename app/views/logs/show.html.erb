@@ -12,7 +12,7 @@
 
 <p>
   <strong>Entry:</strong>
-  <%= @log.entry %>
+  <%= markdown(@log.entry).html_safe %>
 </p>
 
 <%= link_to 'Edit', edit_log_path(@log) %> |
