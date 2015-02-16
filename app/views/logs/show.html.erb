@@ -1,17 +1,10 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @log.title %>
-</p>
+  <h1><%= @log.title %></h1>
 
-<p>
-  <%= markdown(@log.entry).html_safe, class: 'entry' %>
-</p>
+  <span class='entry'><%= markdown(@log.entry).html_safe %></span>
 
-<p>
   <%= image_tag @log.image.url, class: 'img-sm right' %>
-</p>
 
 <%= link_to 'Edit', edit_log_path(@log), class: 'btn btn-primary' %> |
 <%= link_to 'Back', logs_path, class: 'btn btn-primary' %>
