@@ -1,10 +1,13 @@
+<%= link_to 'Edit', edit_log_path(@log), class: 'btn btn-primary' %>
+<%= link_to 'Back', logs_path, class: 'btn btn-primary' %>
+
 <p id="notice"><%= notice %></p>
 
-  <h1><%= @log.title %></h1>
+<h1><%= @log.title %></h1>
 
-  <span class='entry'><%= markdown(@log.entry).html_safe %></span>
+<span class='entry'><%= markdown(@log.entry).html_safe %></span>
 
-  <%= image_tag @log.image.url, class: 'img-sm right' %>
+<%= image_tag @log.image.url, class: 'img-sm right' %>
 
-<%= link_to 'Edit', edit_log_path(@log), class: 'btn btn-primary' %> |
+<%= link_to 'Edit', edit_log_path(@log), class: 'btn btn-primary' %>
 <%= link_to 'Back', logs_path, class: 'btn btn-primary' %>
