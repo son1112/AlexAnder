@@ -10,6 +10,15 @@
     width: 100%;
 }
 
+.entry-content {
+    width: 80%;
+    margin-left: 2em;
+}
+
 .entry {
     border: 1px solid rgba(0,0,0,0.5);
+}
+
+.title h2 {
+    text-align: right;
 }
