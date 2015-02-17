@@ -1,10 +1,17 @@
-$(document).ready(function () {
 
-    $(".entry-content").hide();
+$(document).ready ( function () {
+
+    $("div.entry-content").hide();
     
-    $(".title").click(function () {
-	//console.log($(this).parent().siblings("div.entry-content"));
-	$(this).parent().siblings("div.entry-content").toggle();
+    $('a[href="#"]').click( function(e) {
+	e.preventDefault();
     });
-      
+
+
+    $(".title").click(function (e) {
+	var entry = $(this).parent().siblings("div.entry-content");
+	entry.toggle("slow");
+    });
+
 });
+

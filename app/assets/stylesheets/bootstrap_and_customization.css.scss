@@ -14,16 +14,38 @@ h1 {
 }
 
 .site-title {
-    @extend .bottom-shadow;
     margin: 15px 0;
-    border-radius: 3px;
+    border-radius: 0 0 3px 3px;
+    color: rgba(255,255,255,0.2);
+//    position: fixed;
+}
+
+.yield {
+    margin-top: 6em;
 }
 
 .title {
     @extend .bottom-shadow;
+    border-radius: 0 0 3px 3px;
     margin: 15px 0;
-    &:hover {
-	background: green;
-	color: white;
+    color: rgba(0,0,0,0.8);
+    padding: 15px;
+    a {
+//	color: rgba(0,0,0,0.8);
+	//	&:hover {
+	:hover {
+	    //    color: white;
+	    background: green;
+	    text-decoration: none;
+	}
     }
+    &:hover {
+//	background: green;
+//	color: white;
+    }
+}
+
+.logo {
+    width: 60px;
+    border-radius: 50%;
 }
