@@ -1,6 +1,9 @@
 class LogsController < ApplicationController
+  before_action :authenticate_dev!, except: [:index, :show]
   before_action :set_log, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_dev!
+  before_action :correct_dev, only: [:edit, :update, :destroy]
+
+
 
   def index
     @logs = Log.all
@@ -10,14 +13,14 @@ class LogsController < ApplicationController
   end
 
   def new
-    @log = Log.new
+    @log = current_dev.logs.build
   end
 
   def edit
   end
 
   def create
-    @log = Log.new(log_params)
+    @log = current_dev.logs.build(log_params)
 
     respond_to do |format|
       if @log.save
@@ -51,13 +54,18 @@ class LogsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_log
-      @log = Log.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_log
+    @log = Log.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def log_params
-      params.require(:log).permit(:title, :entry, :image, :tags)
-    end
+  def correct_dev
+    @log = current_dev.logs.find_by(id:params[:id])
+    redirect_to logs_path, notice: "Not authorized to edit this log" if @log.nil?
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def log_params
+    params.require(:log).permit(:title, :entry, :image, :tags, :dev_id)
+  end
 end

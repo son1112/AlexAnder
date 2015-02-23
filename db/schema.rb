@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150214102102) do
+ActiveRecord::Schema.define(version: 20150223111854) do
 
   create_table "devs", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -26,6 +26,8 @@ ActiveRecord::Schema.define(version: 20150214102102) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "name"
+    t.string   "username"
   end
 
   add_index "devs", ["email"], name: "index_devs_on_email", unique: true
@@ -41,6 +43,9 @@ ActiveRecord::Schema.define(version: 20150214102102) do
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
     t.string   "tags",               default: "{}"
+    t.integer  "dev_id"
   end
+
+  add_index "logs", ["dev_id"], name: "index_logs_on_dev_id"
 
 end

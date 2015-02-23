@@ -12,19 +12,19 @@
   <% end %>
 
   <div class="field">
-    <%= f.label "Right now, I am..." %><br>
+    <%= f.label "Task" %><br>
     <%= f.text_field :title %>
   </div>
   <div class="field">
-    <%= f.label "Tell me more..." %><br>
+    <%= f.label "Description" %><br>
     <%= f.text_area :entry %>
   </div>
   <div class="field">
-    <%= f.label "What is this really about?..." %><br>
+    <%= f.label "Please enter tags, separated by commas, to support organization of the logs." %><br>
     <%= f.text_area :tags %>
   </div>
   <div class="field">
-    <%= f.label "Show me..." %><br>
+    <%= f.label "Upload an image" %><br>
     <%= f.file_field :image %>
   </div>
     <div class="actions">

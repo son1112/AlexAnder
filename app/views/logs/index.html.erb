@@ -1,55 +1,55 @@
 
-  <div class='row'>
-    <div class='col-md-12'>
-      <%= link_to 'New Log', new_log_path, class: 'btn btn-primary btn-lg' %>
-      <hr/>
-    </div>
+<div class='row'>
+  <div class='col-md-12'>
+    <%= link_to 'New Log', new_log_path, class: 'btn btn-primary btn-lg' %>
+    <hr/>
   </div>
+</div>
 
-  <div class='row'>
-    <div class='col-md-12'>
-      <% @logs.reverse.each do |log| %>
+<div class='row'>
+  <div class='col-md-12'>
+    <% @logs.reverse.each do |log| %>
 
-	<div class='log-entry'>
+      <div class='log-entry'>
 
-	  <div class='row'>
+	<div class='row'>
 
-	      <div class='title'>
-		<a href='#'>
-		  <h2><span class='glyphicon glyphicon-edit'> </span> <%= log.title %></h2>
-		</a>
-	      </div>
-
-	  </div>
-
-	  <div class='entry-content'>
-	    <div class='row'>
-	      <div class='col-md-12'><%= markdown(log.entry).html_safe %></div>
-	    </div>
-
-	    <div class='row'>
-	      <div class='col-md-6'>
-		<% unless log.image_file_name == nil %>
-		  <%= image_tag log.image.url, class: 'img-sm right' %>
-		<% end %>
-	      </div>
-	    </div>
-	  </div>
-	  
-	  <div class='row'>
-	    <div><%= link_to 'Show', log, class: 'btn btn-primary right m5' %></div>
-	    <div><%= link_to 'Edit', edit_log_path(log), class: 'btn btn-primary right m5' %></div>
-	    <div><%= link_to 'Destroy', log, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-primary right m5' %></div>
+	  <div class='title'>
+	    <a href='#'>
+	      <h2><span class='glyphicon glyphicon-edit'> </span> <%= log.title %><%= log.dev_id %></h2> <em></em>
+	    </a>
 	  </div>
 
 	</div>
-      <% end %>
-    </div>
+
+	<div class='entry-content'>
+	  <div class='row'>
+	    <div class='col-md-12'><%= markdown(log.entry).html_safe %></div>
+	  </div>
+
+	  <div class='row'>
+	    <div class='col-md-6'>
+	      <% unless log.image_file_name == nil %>
+		<%= image_tag log.image.url, class: 'img-sm right' %>
+	      <% end %>
+	    </div>
+	  </div>
+	</div>
+	
+	<div class='row'>
+	  <div><%= link_to 'Show', log, class: 'btn btn-primary right m5' %></div>
+	  <div><%= link_to 'Edit', edit_log_path(log), class: 'btn btn-primary right m5' %></div>
+	  <div><%= link_to 'Destroy', log, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-primary right m5' %></div>
+	</div>
+
+      </div>
+    <% end %>
   </div>
-  <br>
+</div>
+<br>
 
 
-  <%= link_to 'New Log', new_log_path, class: 'btn btn-primary' %>
-  <hr/>
+<%= link_to 'New Log', new_log_path, class: 'btn btn-primary' %>
+<hr/>
 
 
