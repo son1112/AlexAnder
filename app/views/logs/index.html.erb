@@ -1,7 +1,9 @@
 
 <div class='row'>
   <div class='col-md-12'>
-    <%= link_to 'New Log', new_log_path, class: 'btn btn-primary btn-lg' %>
+    <% if dev_signed_in? %>
+      <%= link_to 'New Log', new_log_path, class: 'btn btn-primary btn-lg' %>
+    <% end %>
     <hr/>
   </div>
 </div>
@@ -16,7 +18,7 @@
 
 	  <div class='title'>
 	    <a href='#'>
-	      <h2><span class='glyphicon glyphicon-edit'> </span> <%= log.title %><%= log.dev_id %></h2> <em></em>
+	      <h2><span class='glyphicon glyphicon-edit'> </span> <%= log.title %></h2> <em><%= log.dev.username %></em>
 	    </a>
 	  </div>
 
@@ -37,9 +39,11 @@
 	</div>
 	
 	<div class='row'>
+	  <% if log.dev == current_dev %>
+	    <div><%= link_to 'Edit', edit_log_path(log), class: 'btn btn-primary right m5' %></div>
+	    <div><%= link_to 'Destroy', log, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-primary right m5' %></div>
+	  <% end %>
 	  <div><%= link_to 'Show', log, class: 'btn btn-primary right m5' %></div>
-	  <div><%= link_to 'Edit', edit_log_path(log), class: 'btn btn-primary right m5' %></div>
-	  <div><%= link_to 'Destroy', log, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-primary right m5' %></div>
 	</div>
 
       </div>
@@ -48,8 +52,9 @@
 </div>
 <br>
 
-
-<%= link_to 'New Log', new_log_path, class: 'btn btn-primary' %>
+<% if dev_signed_in? %>
+  <%= link_to 'New Log', new_log_path, class: 'btn btn-primary' %>
+<% end %>
 <hr/>
 
 
