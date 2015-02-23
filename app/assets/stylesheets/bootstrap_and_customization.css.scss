@@ -41,8 +41,11 @@ h1 {
 	}
     }
     &:hover {
-//	background: green;
-//	color: white;
+	background: green;
+	color: white;
+	a {
+	    color: white;
+	}
     }
 }
 
