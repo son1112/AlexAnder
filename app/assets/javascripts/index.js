@@ -1,5 +1,5 @@
 
-$(document).ready ( function () {
+//$(document).ready ( function () {
 
     $("div.entry-content").hide();
     
@@ -13,5 +13,5 @@ $(document).ready ( function () {
 	entry.toggle("slow");
     });
 
-});
+//});
 
