@@ -8,6 +8,20 @@
   </div>
 </div>
 
+<%= form_tag logs_path, class: 'form-inline', method: :get do %>
+    <div class='input-group input-group-lg'>
+        <% if params[:query].present? %>
+            <div class='input-group-btn'>
+                <%= link_to "clear", logs_path, class: "btn btn-default" %>
+            </div>
+        <% end %>
+        <%= text_field_tag :query, params[:query], class: 'form-control', id: "log_search", autocomplete: "off" %>
+        <div class='input-group-btn'>
+            <%= submit_tag "Search", class: 'btn btn-primary' %>
+        </div>
+    </div>
+<% end %>
+
 <div class='row'>
   <div class='col-md-12'>
     <% @logs.reverse.each do |log| %>

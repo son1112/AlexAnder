@@ -3,12 +3,19 @@ class LogsController < ApplicationController
   before_action :set_log, only: [:show, :edit, :update, :destroy]
   before_action :correct_dev, only: [:edit, :update, :destroy]
 
-
-
   def index
-    @logs = Log.all
+    if params[:query].present?
+      @logs = Log.search(params[:query], page: params[:page])
+    else
+      @logs = Log.all.reverse_order.page params[:page]
+    end
+    #@logs = Log.all
   end
 
+  def autocomplete
+    render json: Log.search(params[:query], autocomplete: true, limit: 10).map(&:title)
+  end
+  
   def show
   end
 

@@ -23,6 +23,12 @@ gem 'devise'
 gem 'paperclip', '~> 4.2'
 gem 'aws-sdk', '< 2.0'
 gem 'redcarpet'
+gem 'elasticsearch-model'
+gem 'elasticsearch-rails'
+gem 'searchkick'
+gem 'kaminari'
+gem 'api-pagination'
+
 
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 gem 'spring',        group: :development
