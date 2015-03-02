@@ -1,0 +1,20 @@
+<%= form_for @game do |f| %>
+  <%= render 'layouts/errors', object: @game %>
+  
+  <div class='form-group'>
+    <%= f.label :title %>
+    <%= f.text_field :title, class: 'form-control', required: true %>
+  </div>
+
+  <div class='form-group'>
+    <%= f.label :info %>
+    <%= f.text_field :info, class: 'form-control', required: true %>
+  </div>
+
+  <div class='form-group'>
+    <%= f.label :gamefile %>
+    <%= f.file_field :gamefile, required: true %>
+  </div>
+
+  <%= f.submit 'Submit', class: 'btn btn-primary btn-lg' %>
+<% end %>

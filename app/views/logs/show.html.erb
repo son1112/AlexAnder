@@ -8,5 +8,11 @@
 
 <%= image_tag @log.image.url, class: 'img-sm right' %>
 
+<div class='game'>
+  <% @log.games.each do |game| %>
+    <%= link_to game.title, game.gamefile.url %>
+  <% end %>
+</div>
+  
 <%= link_to 'Edit', edit_log_path(@log), class: 'btn btn-primary' %>
 <%= link_to 'Back', logs_path, class: 'btn btn-primary' %>

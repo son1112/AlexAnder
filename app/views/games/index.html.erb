@@ -1,0 +1,11 @@
+<h1>Games</h1>
+
+<%= link_to 'Upload', new_game_path, class: 'btn btn-lg btn-primary' %>
+
+<ul class='row' id='games-list'>
+  <% @games.each do |game| %>
+    <li class='col-xs-3'>
+      <%= link_to game.title, game.gamefile.url, target: '_blank' %>
+    </li>
+  <% end %>
+</ul>

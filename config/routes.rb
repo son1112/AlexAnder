@@ -1,7 +1,13 @@
 Rails.application.routes.draw do
 
+  resources :games, only: [:new, :create, :index]
+  
+  resources :screenshots, only: [:new, :create, :index]
+  
   devise_for :devs
-  resources :logs
+  resources :logs do
+    resources :games
+  end
 
   root 'logs#index'
   

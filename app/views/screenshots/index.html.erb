@@ -1,0 +1,14 @@
+<h1>Screenshots</h1>
+
+<%= link_to 'Upload', new_screenshot_path, class: 'btn btn-lg btn-primary' %>
+
+<ul class='row' id='screenshots-list'>
+  <% @screenshots.each do |screenshot| %>
+    <li class='col-xs-3'>
+      <%= link_to image_tag(screenshot.image.thumb('180x180#').url, alt: screenshot.title, class: 'img-thumbnail'), screenshot.image.url, target: '_blank' %>
+      <p><%= screenshot.title %></p>
+    </li>
+  <% end %>
+</ul>
+
+      

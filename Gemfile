@@ -28,7 +28,10 @@ gem 'elasticsearch-rails'
 gem 'searchkick'
 gem 'kaminari'
 gem 'api-pagination'
-
+gem 'dragonfly'
+gem 'dragonfly-s3_data_store'
+gem 'dotenv-rails', :groups => [:development, :test]
+gem 'rack-cache'
 
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 gem 'spring',        group: :development
@@ -41,6 +44,7 @@ end
 group :production do
 #  gem 'pg', '0.15.1'
   gem 'rails_12factor'
+  gem 'rack-cache', :require => 'rack/cache'
 end
 
 

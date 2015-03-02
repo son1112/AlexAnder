@@ -21,9 +21,11 @@ class LogsController < ApplicationController
 
   def new
     @log = current_dev.logs.build
+    @log.games.build
   end
 
   def edit
+    @log.games.build
   end
 
   def create
@@ -73,6 +75,6 @@ class LogsController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def log_params
-    params.require(:log).permit(:title, :entry, :image, :tags, :dev_id)
+    params.require(:log).permit(:title, :entry, :image, :tags, :dev_id, games_attributes: [:id, :title, :info, :gamefile])
   end
 end
