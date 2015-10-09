@@ -3,6 +3,6 @@ class Game < ActiveRecord::Base
   belongs_to :log
 #  validates_presence_of :log
   
-  validates :title, presence: true, length: {minimum: 2, maximum: 20}
-  validates :info, presence: true, length: {minimum: 2, maximum: 200}
+#  validates :title, length: {minimum: 2, maximum: 20}
+#  validates :info, length: {minimum: 2, maximum: 200}
 end

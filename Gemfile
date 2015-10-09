@@ -1,7 +1,6 @@
 source 'https://rubygems.org'
-ruby '2.2.0'
 
-gem 'rails', '4.2.0'
+gem 'rails', '4.2.4'
 gem 'sass-rails'
 gem 'compass-rails', '~> 2.0.alpha.0'
 gem 'uglifier', '2.5.1'
@@ -42,9 +41,12 @@ group :development, :test do
 end
 
 group :production do
-#  gem 'pg', '0.15.1'
   gem 'rails_12factor'
   gem 'rack-cache', :require => 'rack/cache'
 end
 
-
+source 'https://rails-assets.org' do
+  gem 'rails-assets-angular-ui-grid'
+  gem 'rails-assets-restangular'
+  # Additional rails-assets gems go here...
+end

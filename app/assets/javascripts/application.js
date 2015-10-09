@@ -15,4 +15,8 @@
 //= require bootstrap
 //= require bootstrap-sprockets
 //= require turbolinks
+//= require angular
+//= require lodash
+//= require angular-ui-grid
+//= require restangular
 //= require_tree .

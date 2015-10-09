@@ -8,10 +8,9 @@ $(document).ready ( function () {
     });
 
 
-    $(".title").click(function (e) {
+    $(".title").on('click' function (e) {
 	var entry = $(this).parent().siblings("div.entry-content");
 	entry.toggle("slow");
     });
-
 });
 
