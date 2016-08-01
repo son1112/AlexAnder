@@ -1,99 +1,121 @@
-AlexAnder weBJOURNal application
-re=>render 2015
-AnderSon
+#!(50\&|)
+
+* ├── app
+* ├── bin
+* ├── .bundle
+* ├── config
+* ├── config.ru
+* ├── db
+* ├── Gemfile
+* ├── Gemfile.lock
+* ├── Gemfile.lock.bak
+* ├── .git
+* ├── .gitignore
+* ├── lib
+* ├── log
+* ├── public
+* ├── rails-new
+* ├── rails-new.sh -> /home/son/bin/rails-new.sh
+* ├── Rakefile
+* ├── README.html
+* ├── README.org
+* ├── test
+* └── vendor
+
+11 directories, 11 files
 
 
+* NB :noexport:
+** Blog
 
-* Blog
+*** Files
 
-** Files
-
-  [[./app/controllers]]
-  [[./app/models]]
-  [[./app/helpers]]
-  [[./app/views]]
-  [[./app/assets/stylesheets]]
-  [[./Gemfile]]
-  [[./.gitignore]]
-  [[./.env]]
-  [[./db/schema.rb]]
-  [[./db/migrate]]
-  [[./config]]
-  [[./config/environments]]
-  [[./config/initializers]]
-
-
-** Log
-
-   [[./app/views/logs]]
-   
-   - [ ] title:string
-   - [ ] entry:text
-   - [ ] tags:array(of strings)
-   - [ ] image upload
-
-
-
-
-* Angular Implementation
-
-  https://bendyworks.com/angularjs-rails-donuts/
-
-** Rails Assets
-
-   converts Bower packages into Bundler gems that slot into your Gemfile
-
+   [[./app/controllers]]
+   [[./app/models]]
+   [[./app/helpers]]
+   [[./app/views]]
+   [[./app/assets/stylesheets]]
    [[./Gemfile]]
-   
-   : source 'https://rails-assets.org' do
-   :   gem 'rails-assets-angular-ui-grid'
-   :   gem 'rails-assets-restangular'
-   :   # Additional rails-assets gems go here...
-   : end
+   [[./.gitignore]]
+   [[./.env]]
+   [[./db/schema.rb]]
+   [[./db/migrate]]
+   [[./config]]
+   [[./config/environments]]
+   [[./config/initializers]]
 
-   [[./app/assets/javascripts/application.js]]
 
-   : //= require angular
-   : //= require lodash
-   : //= require angular-ui-grid
-   : //= require restangular
+*** Log
 
-   [[./app/assets/stylesheets/application.scss]]
+    [[./app/views/logs]]
+    
+    - [ ] title:string
+    - [ ] entry:text
+    - [ ] tags:array(of strings)
+    - [ ] image upload
 
-   : *= require angular-ui-grid
 
-   before or after 'require_tree .' and 'require_self' ?
-** Displaying the AngularJS App in the Rails View
 
-   [[./app/views/logs/index.html.erb]]
 
-   : <div ng-app='logApp'>
-   :   <div ng-controller='indexController'>
-   :     <div ui-grid='gridOptions' class='logGrid'>
-   :     </div>
-   :   </div>
-   : </div>
+** Angular Implementation
 
-   Turbolinks creates problems for embedded js, so turn it off
+   https://bendyworks.com/angularjs-rails-donuts/
 
-   [[./app/views/layouts/application.html.erb]]
+*** Rails Assets
 
-   : <body data-no-turbolink>
+    converts Bower packages into Bundler gems that slot into your Gemfile
 
-** Database Schema
+    [[./Gemfile]]
+    
+    : source 'https://rails-assets.org' do
+    :   gem 'rails-assets-angular-ui-grid'
+    :   gem 'rails-assets-restangular'
+    :   # Additional rails-assets gems go here...
+    : end
 
-*** Using Restangular to call the API
+    [[./app/assets/javascripts/application.js]]
 
-    [[./app/assets/javascripts/logs.js]]
+    : //= require angular
+    : //= require lodash
+    : //= require angular-ui-grid
+    : //= require restangular
 
-    : //RESTANGULAR
-    : Restangular.all('logs').getList().then(function(logs) {
-    :     $scope.gridOptions.data = _.map(logs, function(l) {
-    :         return {
-    :             title: l.title,
-    :             entry: l.entry,
-    :             tags: l.tags
-    :         };
-    :     });
-    : });
+    [[./app/assets/stylesheets/application.scss]]
+
+    : *= require angular-ui-grid
+
+    before or after 'require_tree .' and 'require_self' ?
+*** Displaying the AngularJS App in the Rails View
+
+    [[./app/views/logs/index.html.erb]]
+
+    : <div ng-app='logApp'>
+    :   <div ng-controller='indexController'>
+    :     <div ui-grid='gridOptions' class='logGrid'>
+    :     </div>
+    :   </div>
+    : </div>
+
+    Turbolinks creates problems for embedded js, so turn it off
+
+    [[./app/views/layouts/application.html.erb]]
+
+    : <body data-no-turbolink>
+
+*** Database Schema
+
+**** Using Restangular to call the API
+
+     [[./app/assets/javascripts/logs.js]]
+
+     : //RESTANGULAR
+     : Restangular.all('logs').getList().then(function(logs) {
+     :     $scope.gridOptions.data = _.map(logs, function(l) {
+     :         return {
+     :             title: l.title,
+     :             entry: l.entry,
+     :             tags: l.tags
+     :         };
+     :     });
+     : });
 
