@@ -22,7 +22,7 @@
 * ├── test
 * └── vendor
 
-* NB ::noexport::
+* NB :noexport:
 ** Blog
 
 *** Files
