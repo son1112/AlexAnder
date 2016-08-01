@@ -22,10 +22,7 @@
 * ├── test
 * └── vendor
 
-11 directories, 11 files
-
-
-* NB :noexport:
+* NB ::noexport::
 ** Blog
 
 *** Files
